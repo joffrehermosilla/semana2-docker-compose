@@ -1,16 +1,12 @@
 version: '1'
 services:
-  jenkins:
-    container_name: jenkins
-    image: alucardaywalker/jenkins:${TAG:-latest}
+  eureka_server:
+    container_name: eureka_server
+    image: alucardaywalker/eureka-server:${TAG:-latest}
     build:
-      context: jenkins-ansible     
+      context: eureka-server     
     ports:
-      - "8080:8080"
-    volumes:
-      - $PWD/jenkins_home:/var/jenkins_home
-    dns: 
-      - "8.8.8.8"
+      - "8761:8761"
     networks:
       - net
   remote_host:
