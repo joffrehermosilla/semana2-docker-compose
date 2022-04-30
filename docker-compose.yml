@@ -10,7 +10,7 @@ services:
     networks:
       - net
   remote_host:
-    container_name: remote-host
+    container_name: gateway-server
     image: alucardaywalker/remote-host:${TAG:-latest}
     build:
       context: centos7
